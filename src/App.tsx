@@ -2,7 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import root from './root';
+
 function App() {
+  root();
   return (
     <div className="App">
       <header className="App-header">
