@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.git-repo-tile {
+    border: 1px #D9D9D9 solid;
+    margin: 30px;
+    height: 104px;
+    width: 357px;
+    border-radius: 6px;
+    padding-left: 12px;
+    background: white;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+}
+
+.git-repo-tile:hover {
+    box-shadow: 0px 2px 6px rgba(182, 182, 182, 0.25);
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background: #FF5555;
+    position: relative;
+    margin-top: 12px;
+}
+
+.text {
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.git-repo-tile_text {
+    color: black;
+    margin-left: 12px;
+    margin-top: 23px;
+    font-size: 16px;
+}
+
+.organization {
+    color: #7E7E7E;
+    margin-top: 4px;
+}
+
+.organization:hover {
+    color: #208FBF;
+}
+
+.star-group {
+    margin-top: 4px;
+}
+
+.star-group > * {
+    display: inline-block;
+    color: #7E7E7E;
+}
+
+.star {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.digits {
+    margin-right: 20px;
+}
+
+.repo-name {
+    width: 241px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.input {
+    font-family: 'Roboto', sans-serif;
+    margin: 30px;
+    width: 295px;
+    height: 50px;
+    border: 1px solid #D9D9D9;
+    border-radius: 6px;
+    padding-left: 12px;
+    font-size: 14px;
+}
+
+.input:focus {
+    outline: none;
+    border: 1px solid #FF5555;
+    color: black;
+}
+
+.input:disabled {
+    color: #7E7E7E;
+}
+
+.search-button {
+    margin: 30px;
+    width: 50px;
+    height: 50px;
+    background: #FF5555;
+    border-radius: 6px;
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.icon:hover {
+    opacity: 50%;
+}
+
+.search-button:hover {
+    opacity: 0.7;
+    border: 1px solid black;
+    box-shadow: 0px 2px 6px rgba(182, 182, 182, 0.25);
+}
+
+.search-button:disabled {
+    background: lightgray;
+}
