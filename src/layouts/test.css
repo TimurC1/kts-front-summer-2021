@@ -2,7 +2,6 @@
 
 .git-repo-tile {
     border: 1px #D9D9D9 solid;
-    margin: 30px;
     height: 104px;
     width: 357px;
     border-radius: 6px;
@@ -10,6 +9,7 @@
     background: white;
     display: flex;
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 16px;
 }
 
 .git-repo-tile:hover {
@@ -76,14 +76,15 @@
 }
 
 .input {
+    display: block;
     font-family: 'Roboto', sans-serif;
-    margin: 30px;
     width: 295px;
     height: 50px;
     border: 1px solid #D9D9D9;
     border-radius: 6px;
     padding-left: 12px;
     font-size: 14px;
+    grid-area: A;
 }
 
 .input:focus {
@@ -97,12 +98,12 @@
 }
 
 .search-button {
-    margin: 30px;
     width: 50px;
     height: 50px;
     background: #FF5555;
     border-radius: 6px;
     position: relative;
+    grid-area: B;
 }
 
 .icon {
@@ -124,4 +125,19 @@
 
 .search-button:disabled {
     background: lightgray;
+}
+
+.repo-block {
+    grid-area: C;
+}
+
+.container {
+    width: 397px;
+    display: grid;
+    row-gap: 20px;
+    column-gap: 12px;
+    grid-template-areas:
+    "A A A A B"
+    "C C C C C"
+    "C C C C C";
 }
