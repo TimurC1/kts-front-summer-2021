@@ -1,18 +1,17 @@
 import ApiStore from '../../shared/store/ApiStore';
-import {IGitHubStore, GetOrganizationReposListParams, RepoItem, ApiResp} from "./types";
-import {RequestParams, HTTPMethod} from "../../shared/store/ApiStore/types";
+import {ApiResp, GetOrganizationReposListParams, IGitHubStore, RepoItem} from "./types";
+import {ApiResponse, HTTPMethod} from "../../shared/store/ApiStore/types";
 
 export default class GitHubStore implements IGitHubStore {
-    readonly baseUrl: string = 'https://api.github.com/';
+    readonly baseUrl: string = 'https://api.github.com';
     private readonly apiStore = new ApiStore(this.baseUrl);
 
-    async getOrganizationReposList(listParams: GetOrganizationReposListParams): Promise<ApiResp<RepoItem[]>> {
-        const params: RequestParams<{}> = {
-            endpoint: `orgs/${listParams.organizationName}/repos`,
+    async getOrganizationReposList(params: GetOrganizationReposListParams): Promise<ApiResponse<RepoItem[], any>> {
+        return await this.apiStore.request({
             method: HTTPMethod.GET,
+            data: {},
             headers: {},
-            data: {}
-        }
-        return this.apiStore.request<RepoItem[], any>(params);
+            endpoint: `/orgs/${params.organizationName}/repos`
+        })
     }
 }

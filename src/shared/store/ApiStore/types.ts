@@ -18,24 +18,28 @@ export type RequestParams<ReqT> = {
     data: ReqT;
 }
 
-enum StatusHTTP {
-    Success= 'OK',
-    Bad = 'Bad request'
+export enum StatusHTTP {
+    UNEXPECTED_ERROR = 'UNEXPECTED_ERROR'
 }
 
 export type ApiResponse<SuccessT, ErrorT> =
     | {
     success: true;
     data: SuccessT;
-    status: StatusHTTP.Success;
+    status: number;
 }
     | {
     success: false;
     data: ErrorT;
-    status: StatusHTTP.Bad;
-};
+    status: number;
+} | {
+    success: false;
+    status: StatusHTTP;
+    data: null;
+}
 
 export interface IApiStore {
     readonly baseUrl: string;
+
     request<SuccessT, ErrorT = any, ReqT = {}>(params: RequestParams<ReqT>): Promise<ApiResponse<SuccessT, ErrorT>>
 }
